@@ -1,14 +1,17 @@
-# Chrome Profile Generator Telegram Bot
+# Chrome Profile Generator Bot (Railway)
 
-This Telegram bot lets you create Google Chrome-style profile folders via command.
+This bot allows you to create Google Chrome-style profile folders using Telegram commands.
+
+## 📦 Usage
+Send a command in Telegram like:
+
+    /newprofile myname
+
+The bot will create a folder in `/app/profiles/myname`
 
 ## 🚀 Deploy to Railway
 
-1. Click "New Project" on [Railway](https://railway.app/)
-2. Upload this folder
-3. Add an environment variable:
-   - `BOT_TOKEN`: your Telegram bot token
-
-## 📦 Bot Command
-
-- `/newprofile myname` → creates folder `profiles/myname`
+1. Upload this project to Railway
+2. Set an environment variable:
+   - `BOT_TOKEN` = Telegram Bot Token
+3. Done!

@@ -2,7 +2,8 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN = os.getenv("8033917249:AAFp_s3kjPB2vqW2AlMdS17M1OBNY2o_CVU")  # Get token from Railway environment variable
+# Token fixed directly in the code
+BOT_TOKEN = "8033917249:AAFp_s3kjPB2vqW2AlMdS17M1OBNY2o_CVU"
 
 PROFILE_BASE = os.path.join(os.getcwd(), "profiles")
 
@@ -16,7 +17,7 @@ async def new_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     try:
         os.makedirs(profile_path, exist_ok=True)
-        await update.message.reply_text(f"✅ Profile '{profile_name}' created at: {profile_path}")
+        await update.message.reply_text(f"✅ Profile '{profile_name}' created successfully.")
     except Exception as e:
         await update.message.reply_text(f"❌ Error: {str(e)}")
 
