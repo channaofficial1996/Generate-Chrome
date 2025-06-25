@@ -2,10 +2,11 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-# Token fixed directly in the code
 BOT_TOKEN = "8033917249:AAFp_s3kjPB2vqW2AlMdS17M1OBNY2o_CVU"
-
 PROFILE_BASE = os.path.join(os.getcwd(), "profiles")
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("👋 សួស្ដី! ប្រើ /newprofile <ឈ្មោះ> ដើម្បីបង្កើត Chrome Profile")
 
 async def new_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if len(context.args) != 1:
@@ -22,5 +23,6 @@ async def new_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"❌ Error: {str(e)}")
 
 app = ApplicationBuilder().token(BOT_TOKEN).build()
+app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("newprofile", new_profile))
 app.run_polling()
