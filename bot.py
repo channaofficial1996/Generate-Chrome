@@ -2,7 +2,7 @@ import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # Get token from Railway environment variable
+BOT_TOKEN = os.getenv("8033917249:AAFp_s3kjPB2vqW2AlMdS17M1OBNY2o_CVU")  # Get token from Railway environment variable
 
 PROFILE_BASE = os.path.join(os.getcwd(), "profiles")
 
